@@ -1,0 +1,6 @@
+{
+  "name": "Livestock Hub",
+  "description": "Rural Utility Cost - Core livestock hub for planning, animal growth, breeding, and feed needs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
