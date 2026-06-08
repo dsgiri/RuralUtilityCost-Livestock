@@ -49,7 +49,8 @@ export function ToolCard({ tool, isFavorite, onToggleFavorite }: ToolCardProps) 
       
       <Link 
         to={tool.href}
-        className="w-full bg-[#2563EB] hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md text-[13px] text-center transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-2"
+        className="w-full bg-[#2563EB] hover:bg-blue-700 text-white font-semibold py-2 px-4 min-h-[48px] rounded-md text-[13px] text-center flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-2"
+        aria-label={`Open ${tool.title} Calculator`}
       >
         Open Tool
       </Link>

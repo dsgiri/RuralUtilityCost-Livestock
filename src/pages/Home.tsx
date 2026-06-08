@@ -2,7 +2,8 @@ import { useFavorites } from '../hooks/useFavorites';
 import { LIVESTOCK_TOOLS, ToolCategory } from '../data';
 import { ToolCard } from '../components/ui/ToolCard';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/seo/SEO';
+import { AdSensePlaceholder } from '../components/ui/AdSensePlaceholder';
 
 export function Home() {
   const { isFavorite, toggleFavorite } = useFavorites();
@@ -15,10 +16,13 @@ export function Home() {
 
   return (
     <div className="flex flex-col flex-1 bg-[#F8FAFC]">
-      <Helmet>
-        <title>Livestock Hub | Rural Utility Cost</title>
-        <meta name="description" content="Manage livestock planning, growth estimations, and herd breeding schedules. Use precision tools to optimize feed requirements and production outcomes across the rural landscape." />
-      </Helmet>
+      <SEO 
+        title="Livestock Planning & Animal Estimators" 
+        description="A professional livestock hub for managing herd planning, cattle growth estimations, and feed breeding schedules. Built to optimize agricultural operations."
+        canonicalPath="/"
+      />
+      <AdSensePlaceholder type="header" />
+      
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-[#EFF6FF] to-[#F0FDF4] border-b border-slate-200">
         <div className="p-6">
@@ -35,19 +39,22 @@ export function Home() {
       <div className="flex-1 w-full max-w-[1400px] mx-auto p-5 overflow-hidden flex flex-col lg:flex-row gap-5">
         
         {/* Sidebar categories (Left) */}
-        <div className="w-full lg:w-[220px] shrink-0 flex flex-row overflow-x-auto lg:flex-col gap-2 lg:gap-1 pb-4 lg:pb-0 scrollbar-hide">
+        <div className="w-full lg:w-[220px] shrink-0 flex flex-row overflow-x-auto lg:flex-col gap-2 lg:gap-1 pb-4 lg:pb-0 scrollbar-hide" role="navigation" aria-label="Tool Categories">
           <div className="hidden lg:block text-[11px] font-bold text-[#94A3B8] uppercase mb-2">
             Categories
           </div>
           {categories.map((cat, i) => (
-            <button key={cat} className={`whitespace-nowrap flex-shrink-0 text-left px-4 lg:px-3 py-2.5 rounded-md text-[14px] flex items-center gap-2.5 transition-colors border-none ${i === 0 ? 'bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] text-[#2563EB] font-semibold' : 'bg-transparent text-slate-600 hover:bg-white/50'}`}>
+            <button key={cat} className={`whitespace-nowrap min-h-[48px] lg:min-h-0 flex-shrink-0 text-left px-4 lg:px-3 py-2.5 rounded-md text-[14px] flex items-center gap-2.5 transition-colors border-none ${i === 0 ? 'bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] text-[#2563EB] font-semibold' : 'bg-transparent text-slate-600 hover:bg-white/50'}`}>
               {cat}
             </button>
           ))}
+          <div className="hidden lg:block mt-8">
+            <AdSensePlaceholder type="sidebar" />
+          </div>
         </div>
 
         {/* Center Canvas */}
-        <div className="flex-1">
+        <div className="flex-1 w-full overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {featuredTools.map(tool => (
               <ToolCard 

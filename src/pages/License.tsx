@@ -1,13 +1,15 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/seo/SEO';
 
 export function License() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <Helmet>
-        <title>License | Livestock Hub</title>
-        <meta name="description" content="License information for the Livestock Hub application." />
-      </Helmet>
-      <h1 className="text-3xl font-bold text-slate-900 mb-6">License</h1>
+    <div className="w-full flex-1">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <SEO 
+          title="Software License" 
+          description="Review the software licensing arrangement for the Livestock estimating tools ecosystem." 
+          canonicalPath="/license"
+        />
+        <h1 className="text-3xl font-bold text-slate-900 mb-6">License</h1>
       
       <div className="bg-slate-50 rounded-lg p-6 font-mono text-sm text-slate-700 border border-slate-200 whitespace-pre-wrap">
 {`MIT License
@@ -31,6 +33,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.`}
+        </div>
       </div>
     </div>
   );

@@ -1,14 +1,16 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/seo/SEO';
 
 export function About() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <Helmet>
-        <title>About | Livestock Hub</title>
-        <meta name="description" content="Learn about the Livestock Hub, part of the Rural Utility Cost ecosystem for clear agricultural planning tools." />
-      </Helmet>
-      <div className="prose prose-slate lg:prose-lg max-w-none">
-        <h1 className="text-3xl font-bold text-slate-900 mb-6">About Livestock Hub</h1>
+    <div className="w-full flex-1">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <SEO 
+          title="About the Livestock Hub" 
+          description="Learn about the Livestock Hub, a planning ecosystem designed to assist rural agricultural operations with decision-making." 
+          canonicalPath="/about"
+        />
+        <div className="prose prose-slate prose-img:rounded-xl lg:prose-lg max-w-none">
+          <h1 className="text-3xl font-bold text-slate-900 mb-6 leading-tight">About Livestock Hub</h1>
         
         <p className="text-lg text-slate-700 leading-relaxed mb-6">
           The Livestock Hub is a dedicated application within the broader <strong>Rural Utility Cost</strong> ecosystem. Our focus here is entirely on animal-related planning and agricultural estimates.
@@ -31,6 +33,7 @@ export function About() {
           <li><strong>Clarity:</strong> Easy-to-read charts and straightforward outcomes.</li>
           <li><strong>Reliability:</strong> Consistent experiences connected to the Rural Utility Cost family.</li>
         </ul>
+      </div>
       </div>
     </div>
   );

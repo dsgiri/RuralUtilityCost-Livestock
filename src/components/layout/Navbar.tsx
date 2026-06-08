@@ -56,11 +56,12 @@ export function Navbar() {
           <div className="-mr-2 flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-600 hover:bg-slate-100 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 min-h-[48px] min-w-[48px] rounded-md text-slate-400 hover:text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200"
               aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               <span className="sr-only">Open main menu</span>
-              {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
+              {isOpen ? <X className="block h-6 w-6" aria-hidden="true" /> : <Menu className="block h-6 w-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -68,7 +69,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-slate-200 absolute top-[60px] left-0 w-full shadow-lg">
+        <div id="mobile-menu" className="md:hidden bg-white border-t border-slate-200 absolute top-[60px] left-0 w-full shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {NAV_LINKS.map((link) => {
               const isActive = location.pathname === link.href;
@@ -77,7 +78,7 @@ export function Navbar() {
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  className={`block px-3 py-3 min-h-[48px] rounded-md text-base font-medium ${
                     isActive 
                       ? 'bg-blue-50 text-blue-700 font-bold' 
                       : 'text-slate-600 hover:bg-slate-50'

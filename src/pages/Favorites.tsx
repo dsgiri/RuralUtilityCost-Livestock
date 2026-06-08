@@ -3,7 +3,8 @@ import { LIVESTOCK_TOOLS } from '../data';
 import { ToolCard } from '../components/ui/ToolCard';
 import { Link } from 'react-router-dom';
 import { HeartCrack } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/seo/SEO';
+import { AdSensePlaceholder } from '../components/ui/AdSensePlaceholder';
 
 export function Favorites() {
   const { favorites, isFavorite, toggleFavorite } = useFavorites();
@@ -11,17 +12,20 @@ export function Favorites() {
   const favoriteTools = LIVESTOCK_TOOLS.filter(tool => favorites.includes(tool.id));
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <Helmet>
-        <title>My Favorites | Livestock Hub</title>
-        <meta name="description" content="Access your saved livestock planning and estimation tools." />
-      </Helmet>
-      <div className="mb-8 border-b border-slate-200 pb-4">
-        <h1 className="text-3xl font-bold text-slate-900">My Favorites</h1>
-        <p className="text-slate-500 mt-2">Saved livestock planning and estimation tools.</p>
-      </div>
+    <div className="w-full flex-1">
+      <AdSensePlaceholder type="header" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <SEO 
+          title="My Favorite Livestock Tools" 
+          description="Access your saved livestock planning and estimation calculators quickly and efficiently." 
+          canonicalPath="/favorites"
+        />
+        <div className="mb-8 border-b border-slate-200 pb-4">
+          <h1 className="text-3xl font-bold text-slate-900">My Favorites</h1>
+          <p className="text-slate-500 mt-2">Saved livestock planning and estimation tools.</p>
+        </div>
 
-      {favoriteTools.length === 0 ? (
+        {favoriteTools.length === 0 ? (
         <div className="bg-slate-50 border border-slate-200 border-dashed rounded-xl p-12 text-center">
           <HeartCrack className="w-12 h-12 text-slate-300 mx-auto mb-4" />
           <h2 className="text-xl font-semibold text-slate-700 mb-2">No favorites yet</h2>
@@ -50,6 +54,7 @@ export function Favorites() {
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }
