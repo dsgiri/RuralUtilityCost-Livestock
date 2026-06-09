@@ -9,6 +9,7 @@ import { Legal } from './pages/Legal';
 import { License } from './pages/License';
 import { ToolDetail } from './pages/ToolDetail';
 import { NotFound } from './pages/NotFound';
+import { Portfolio } from './pages/Portfolio';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/legal" element={<Legal />} />
             <Route path="/license" element={<License />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             
             <Route path="/tools/:toolId" element={<ToolDetail />} />
             

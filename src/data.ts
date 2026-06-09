@@ -69,6 +69,7 @@ export const LIVESTOCK_TOOLS: LivestockTool[] = [
 
 export const NAV_LINKS = [
   { name: 'Home', href: '/' },
+  { name: 'Portfolio', href: '/portfolio' },
   { name: 'Plan', href: '/plan' },
   { name: 'Forecast', href: '/forecast' },
   { name: 'What If', href: '/what-if' },
@@ -78,9 +79,10 @@ export const NAV_LINKS = [
 ];
 
 export const FOOTER_LINKS = [
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'Legal', href: '/legal' },
-  { name: 'License', href: '/license' },
-  { name: 'GitHub', href: 'https://github.com' },
+  { name: 'About Us', href: 'https://ruralutilitycost.com/about' },
+  { name: 'Contact Us', href: 'https://ruralutilitycost.com/contact' },
+  { name: 'Privacy Policy', href: 'https://ruralutilitycost.com/privacy-policy' },
+  { name: 'Terms of Use', href: 'https://ruralutilitycost.com/terms-of-use' },
+  { name: 'Disclaimer', href: 'https://ruralutilitycost.com/disclaimer' },
+  { name: 'Portfolio', href: 'https://ruralutilitycost.com/portfolio' }
 ];
